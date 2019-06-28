@@ -5,37 +5,24 @@ This repository holds the original code for CSMRI-3DCSC (Medical Image Analysis)
 
 ![](./README_resource/overview.png "")
 *Overview of the proposed method: this proposed method recovers high-frequency information using a shared 3D convolution-based dictionary built progressively during the reconstruction process in an unsupervised manner, while low-frequency information is recovered using a total variation-based energy minimization method that leverages temporal coherence in dynamic MRI.
-Additionally, the proposed 3D dictionary is built across three different scales to more efficiently adapt to various feature sizes, and elastic net regularization is employed to promote a better approximation to the sparse input data. We also propose an automatic parameter selection technique based on a genetic algorithm to find optimal parameters for our numerical solver which is a variant of the alternating direction method of multipliers (ADMM).*
-
-![](https://raw.githubusercontent.com/tmquan/RefineGAN/master/data/ReconGAN.png "")
-*Two learning processes are trained adversarially to achieve better reconstruction from generator G and to fool the ability of recognizing the real or
-fake MR image from discriminator D*
-
-
-![](https://raw.githubusercontent.com/tmquan/RefineGAN/master/data/DualLoss.png "")
-*The cyclic data consistency loss, which is a combination of under-sampled frequency loss and the fully reconstructed image loss.*
-
-
-![](https://raw.githubusercontent.com/tmquan/RefineGAN/master/data/RefineGAN.png "")
-*Generator G, built by basic building blocks, can reconstruct inverse amplitude of the residual component causes by reconstruction from under-sampled
-k-space data. The final result is obtained by adding the zero-filling reconstruction to the output of G*
+Additionally, the proposed 3D dictionary is built across three different scales to more efficiently adapt to various feature sizes, and elastic net regularization is employed to promote a better approximation to the sparse input data.
+We also propose an automatic parameter selection technique based on a genetic algorithm to find optimal parameters for our numerical solver which is a variant of the alternating direction method of multipliers (ADMM).*
 
 ----------
 
-It is developed for research purposes only and not for commercialization. 
-If you use it, please refer to our work. 
+It is developed for research purposes only. 
+If you use our code, please refer to our work. 
 
-    @ARTICLE{8327637, 
-	author={T. M. Quan and T. Nguyen-Duc and W. Jeong}, 
-	journal={IEEE Transactions on Medical Imaging}, 
-	title={Compressed Sensing MRI Reconstruction Using a Generative Adversarial Network With a Cyclic Loss}, 
-	year={2018}, 
-	volume={37}, 
-	number={6}, 
-	pages={1488-1497}, 
-	doi={10.1109/TMI.2018.2820120}, 
-	ISSN={0278-0062}, 
-	month={June},
+    @article{NGUYENDUC2019179,
+    title = "Frequency-splitting dynamic MRI reconstruction using multi-scale 3D convolutional sparse coding and automatic parameter selection",
+    journal = "Medical Image Analysis",
+    volume = "53",
+    pages = "179 - 196",
+    year = "2019",
+    issn = "1361-8415",
+    doi = "https://doi.org/10.1016/j.media.2019.02.001",
+    url = "http://www.sciencedirect.com/science/article/pii/S1361841519300155",
+    author = "Thanh Nguyen-Duc and Tran Minh Quan and Won-Ki Jeong"
     }
     
 ----------
