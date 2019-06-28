@@ -13,7 +13,7 @@ g = gpuDevice(gpu_id);
 reset(g);
 
 %%  Options Dictionary
-opt.numAtoms = 3; % It must be divided by 3 
+opt.numAtoms = 3; % Total number of filters (it must be divided by 3) 
 opt.numTypes = 3; % We only support 3 sizes of filters
 
 % Atom 1 size
