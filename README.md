@@ -81,8 +81,8 @@ To begin, you should generate D and Dt matrices for TV process (it takes time so
  Inputs:
     [Nx,Ny,Nt] : Dimensions of sequence to reconstruct.
  Outputs:
-    [D, Dt] : Matrix operators for computing the TV in time on a vectorised
-              sequence (D) and its transpose (Dt).
+    [D, Dt : Matrix operators for computing the TV in time on a vectorised sequence (D) and its transpose (Dt).
+    
 ----------
 
 To set up dictionary method
