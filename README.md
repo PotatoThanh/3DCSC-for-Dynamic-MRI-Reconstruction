@@ -93,10 +93,17 @@ To set up dictionary method
     
 ----------
 
-To run Genetic Algorithm to find parameters 
-    
-    	    
-Checkpoint of training will be save to directory `train_log`
+To run Genetic Algorithm to find parameters.
+GA takes really long time; thus, you should turn on 'saveIntermediate' to save the best params during searching(tem_params folder)
+
+    main.m
+    ├── line 41: runGA = 0; You needto set this one in order to 1 to run GA
+    ├── line 46: load('data_tmi.mat') Load full sampled data for searching process
+    ├── line 53: file_mask = './data/mask_cardiac_25.mat'; Load sampling mask
+    ├── line 91: generation = 4;
+    ├── line 92: population = 120;
+    ├── line 91: opt.num_iters = 100; Number of iterations for each individual
+    └── line 101: file_ga = './searched_params/GA_param25.mat'; File name for saving params
 
 ----------
 
