@@ -88,8 +88,8 @@ To begin, you should generate D and Dt matrices for TV process (it takes time so
 To set up dictionary method
 
  main.m
-    ├── line 16: opt.numAtoms = 3; % Total number of filters (it must be divided by 3)  
-    └── line 20 -32: opt.atomSize % Set up size filter of each level
+    ├── line 16: opt.numAtoms = 3;  Total number of filters (it must be divided by 3)  
+    └── line 20 -32: opt.atomSize  Set up size filter of each level
     
 ----------
 
