@@ -76,8 +76,8 @@ Prerequisites
 
 To begin, you should generate D and Dt matrices for TV process (it takes time so we should generate before running).
 
- TV_maxtrix/
-    └── GenD.m
+ TV_maxtrix
+ └── GenD.m
  Inputs:
     [Nx,Ny,Nt] : Dimensions of sequence to reconstruct.
  Outputs:
