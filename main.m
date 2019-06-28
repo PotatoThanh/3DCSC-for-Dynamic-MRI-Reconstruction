@@ -13,7 +13,7 @@ g = gpuDevice(gpu_id);
 reset(g);
 
 %%  Options Dictionary
-opt.numAtoms = 3; % Total number of filters (it must be divided by 3) 
+opt.numAtoms = 27; % Total number of filters (it must be divided by 3) 
 opt.numTypes = 3; % We only support 3 sizes of filters
 
 % Atom 1 size
@@ -88,7 +88,7 @@ if runGA
     %    alpha  gamma  lambda1 lambda2  rho   sigma  theta  D0  n
     
     % GA set up
-    generation = 4;
+    generation = 3;
     population = 120;
     num_params = 9;
     opt.num_iters = 100; % number of iterations
