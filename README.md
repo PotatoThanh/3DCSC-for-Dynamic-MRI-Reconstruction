@@ -54,7 +54,7 @@ To set up dictionary method
     
 ----------
 
-To run Genetic Algorithm to find parameters.
+To run Genetic Algorithm to find parameters (run main.m file with options).
 GA takes really long time; thus, you should turn on 'saveIntermediate' to save the best params during searching(tem_params folder)
 
     main.m
@@ -70,7 +70,7 @@ GA takes really long time; thus, you should turn on 'saveIntermediate' to save t
 
 ----------
 
-To run recontruction method
+To run recontruction method (run main.m file with options).
 First thing, you should turn of GA flag on line 41 in main.m to skip search process
 
     main.m
