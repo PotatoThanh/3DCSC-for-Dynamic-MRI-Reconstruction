@@ -4,9 +4,8 @@
 This repository holds the original code for CSMRI-3DCSC (Medical Image Analysis), 
 
 ![](./README_resource/overview.png "")
-*Overview of the proposed method: it aims to reconstruct the images which are satisfied the constraint of under-sampled measurement data; and
-whether those look similar to the fully aliasing-free results. Additionally, if the fully sampled images taken from the database go through the same process of
-under-sampling acceleration; we can still receive the reconstruction as expected to the original images.*
+*Overview of the proposed method: this proposed method recovers high-frequency information using a shared 3D convolution-based dictionary built progressively during the reconstruction process in an unsupervised manner, while low-frequency information is recovered using a total variation-based energy minimization method that leverages temporal coherence in dynamic MRI.
+Additionally, the proposed 3D dictionary is built across three different scales to more efficiently adapt to various feature sizes, and elastic net regularization is employed to promote a better approximation to the sparse input data. We also propose an automatic parameter selection technique based on a genetic algorithm to find optimal parameters for our numerical solver which is a variant of the alternating direction method of multipliers (ADMM).*
 
 ![](https://raw.githubusercontent.com/tmquan/RefineGAN/master/data/ReconGAN.png "")
 *Two learning processes are trained adversarially to achieve better reconstruction from generator G and to fool the ability of recognizing the real or
