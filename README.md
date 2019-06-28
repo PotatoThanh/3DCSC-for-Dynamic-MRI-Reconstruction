@@ -24,45 +24,6 @@ If you use our code, please refer to our work.
     url = "http://www.sciencedirect.com/science/article/pii/S1361841519300155",
     author = "Thanh Nguyen-Duc and Tran Minh Quan and Won-Ki Jeong"
     }
-    
-----------
-Directory structure of data:
-
-     tree data
-     data/
-    ├── brain
-    │   ├── db_train
-    │   └── db_valid
-    ├── knees
-    │   ├── db_train
-    │   └── db_valid
-    └── mask
-        ├── cartes
-        │   ├── mask_1
-        │   ├── mask_2
-        │   ├── ...
-        │   └── mask_9
-        ├── gauss
-        │   ├── mask_1
-        │   ├── mask_2
-        │   ├── ...
-        │   └── mask_9
-        ├── radial
-        │   ├── mask_1
-        │   ├── mask_2
-        │   ├── ...
-        │   └── mask_9
-        └── spiral
-            ├── mask_1
-            ├── mask_2
-            ├── ...
-            └── mask_9
-
-    
-    
-Brain data is used for magnitude-value experiment, it is extracted from http://brain-development.org/ixi-dataset/ 
-
-Knees data is used for complex-value experiment, it is extracted from http://mridata.org 
 
 ----------
 
@@ -97,9 +58,11 @@ To run Genetic Algorithm to find parameters.
 GA takes really long time; thus, you should turn on 'saveIntermediate' to save the best params during searching(tem_params folder)
 
     main.m
-    ├── line 41: runGA = 0; You needto set this one in order to 1 to run GA
+    ├── line 41: runGA = 0; You need to set this one in order to 1 to run GA
     ├── line 46: load('data_tmi.mat') Load full sampled data for searching process
     ├── line 53: file_mask = './data/mask_cardiac_25.mat'; Load sampling mask
+    ├── line 60: opt.isDisplay = 0; Show figures during searching
+    ├── line 61: opt.isConsole = 0; Show outputs on console during searching
     ├── line 91: generation = 4;
     ├── line 92: population = 120;
     ├── line 91: opt.num_iters = 100; Number of iterations for each individual
@@ -107,19 +70,27 @@ GA takes really long time; thus, you should turn on 'saveIntermediate' to save t
 
 ----------
 
-To test the model
+To run recontruction method
+First thing, you should turn of GA flag on line 41 in main.m to skip search process
 
-    mkdir result 
+    main.m
+    ├── line 41: runGA = 0; You need to set this one in order to 1 to run GA
+    ├── line 112: load('data_tmi.mat') Load full sampled data for reconstruct process
+    ├── line 118: file_mask = './data/mask_cardiac_25.mat'; Load sampling mask respecting to searching step 
+    ├── line 123: GA_result_name = './searched_params/GA_param25.mat'; Load searched parameters
+    ├── line 91: opt.num_iters = 200; Total number of iterations
+    ├── line 132: opt.isDisplay = 1; Show figures during searching
+    ├── line 133: opt.isConsole = 1; Show outputs on console during searching
+    └── line 158: file_save = './result/recon_cardiac.mat'; File name for saving result
+    
+The result is saved in ./result folder.
+It contains:
 
-
-    python exp_knees_RefineGAN_mask_radial_1.py  	 \
-		    --gpu='0' 				 \
-		    --imageDir='data/knees/db_valid/' 	 \
-		    --labelDir='data/knees/db_valid/' 	 \
-		    --maskDir='data/mask/radial/mask_1/' \
-		    --sample='result/exp_knees_RefineGAN_mask_radial_1/' \
-		    --load='train_log/exp_knees_RefineGAN_mask_radial_1/max-validation_PSNR_boost_A.data-00000-of-00001'   
+    S: Reconstruction
+    X: Sparse coding
+    PSNR: PSNR over iteration
+    runtime: Running time
 
 
 ----------
-The authors would like to thank Dr. Yoonho Nam for the helpful discussion and MRI data, and Yuxin Wu for the help on Tensorpack.
+We would like to thank Jose Caballero for TV code (http://caballerojose.com/code.html).
