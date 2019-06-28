@@ -76,18 +76,18 @@ Prerequisites
 
 To begin, you should generate D and Dt matrices for TV process (it takes time so we should generate before running).
 
- TV_maxtrix
- └── GenD.m
- Inputs:
-    [Nx,Ny,Nt] : Dimensions of sequence to reconstruct.
- Outputs:
-    [D, Dt : Matrix operators for computing the TV in time on a vectorised sequence (D) and its transpose (Dt).
+     TV_maxtrix
+     └── GenD.m
+	 Inputs:
+    		[Nx,Ny,Nt] : Dimensions of sequence to reconstruct.
+	 Outputs:
+    		[D, Dt : Matrix operators for computing the TV in time on a vectorised sequence (D) and its transpose (Dt).
     
 ----------
 
 To set up dictionary method
 
- main.m
+    main.m
     ├── line 16: opt.numAtoms = 3;  Total number of filters (it must be divided by 3)  
     └── line 20 -32: opt.atomSize  Set up size filter of each level
     
